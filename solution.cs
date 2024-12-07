@@ -1,7 +1,22 @@
-using System;
-
-public class Node
+public class LinkedList
 {
-    public int Value { get; set; }
-    public Node Next { get; set; }
+    public Node Head { get; set; }
+
+    public void Add(int value)
+    {
+        Node newNode = new Node { Value = value };
+        if (Head == null)
+        {
+            Head = newNode;
+        }
+        else
+        {
+            Node current = Head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+        }
+    }
 }
